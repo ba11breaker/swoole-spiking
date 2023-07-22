@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "dev:server": "docker compose exec -ti server bash",
+        "run:docker": "docker-compose up -d",
+        "down:docker": "docker-compose up -d"
+    },
+    "require": {
+        "swoole/ide-helper": "^5.0"
+    }
+}
