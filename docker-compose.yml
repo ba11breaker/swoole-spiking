@@ -6,14 +6,9 @@ services:
     environment:
       AUTORELOAD_PROGRAMS: "ddos-protection http1 http1-integrated http2 keepalive mixed-protocols-1 pool-msgqueue pool-tcp-socket pool-unix-socket redis rock-paper-scissors tcp1 tcp2 udp websocket websocket-integrated"
       DISABLE_DEFAULT_SERVER: 1
-    ports:
-      - 9801:9801
-      - 9090:9090
-      - 9501:9501
-    expose:
-      - 9501
     volumes:
       - ./examples:/var/www
+    network_mode: host
   client:
     image: deminy/swoole-by-examples:client-5.0
     environment:
